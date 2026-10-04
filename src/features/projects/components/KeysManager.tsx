@@ -3,7 +3,7 @@
 import { useCallback, useState, type ReactNode } from "react";
 import { PageHeader } from "@/shared/components/layout/PageHeader";
 import { Button } from "@/shared/components/ui/Button";
-import { site } from "@/shared/lib/site";
+import { useUser } from "@/shared/components/layout/UserProvider";
 import { generateSecret, maskSecret, todayIso } from "@/features/projects/lib/keys";
 import type { CreatedKey, KeyType, Project, ProjectKey } from "@/features/projects/types/types";
 import { CreateKeyDialog } from "@/features/projects/components/CreateKeyDialog";
@@ -18,6 +18,7 @@ type KeysManagerProps = {
 };
 
 export function KeysManager({ project, initialKeys, children }: KeysManagerProps) {
+  const user = useUser();
   const [keys, setKeys] = useState(initialKeys);
   const [creating, setCreating] = useState(false);
   const [createdKey, setCreatedKey] = useState<CreatedKey | null>(null);
@@ -33,7 +34,7 @@ export function KeysManager({ project, initialKeys, children }: KeysManagerProps
       {
         id: crypto.randomUUID(),
         name,
-        owner: site.user.name,
+        owner: user.name,
         maskedKey: maskSecret(secret),
         createdAt,
         lastUsed: null,

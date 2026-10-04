@@ -1,4 +1,3 @@
-import { site } from "@/shared/lib/site";
 import type { Project, ProjectKey } from "@/features/projects/types/types";
 
 export async function getProject(): Promise<Project> {
@@ -10,7 +9,7 @@ export async function getKeys(): Promise<ProjectKey[]> {
     {
       id: "key_production",
       name: "Production",
-      owner: site.user.name,
+      owner: "Ada Lovelace",
       maskedKey: "cai-live-••••••••a3f9",
       createdAt: "2026-08-14",
       lastUsed: "2 min ago",
@@ -19,7 +18,7 @@ export async function getKeys(): Promise<ProjectKey[]> {
     {
       id: "key_staging",
       name: "Staging",
-      owner: site.user.name,
+      owner: "Ada Lovelace",
       maskedKey: "cai-live-••••••••7c21",
       createdAt: "2026-07-30",
       lastUsed: "1 hr ago",
@@ -28,7 +27,7 @@ export async function getKeys(): Promise<ProjectKey[]> {
     {
       id: "key_ci_evals",
       name: "CI evals",
-      owner: site.user.name,
+      owner: "Ada Lovelace",
       maskedKey: "cai-test-••••••••e04b",
       createdAt: "2026-07-02",
       lastUsed: "3 days ago",
@@ -37,7 +36,7 @@ export async function getKeys(): Promise<ProjectKey[]> {
     {
       id: "key_local_dev",
       name: "Local dev",
-      owner: site.user.name,
+      owner: "Ada Lovelace",
       maskedKey: "cai-test-••••••••19dd",
       createdAt: "2026-09-21",
       lastUsed: null,

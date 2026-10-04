@@ -2,6 +2,7 @@ import { ButtonLink } from "@/shared/components/ui/Button";
 import { ThemeToggle } from "@/shared/components/ui/ThemeToggle";
 import { site } from "@/shared/lib/site";
 import { MobileSidebar } from "./MobileSidebar";
+import { WorkspaceLabel } from "./WorkspaceLabel";
 
 type TopbarProps = {
   page: string;
@@ -13,7 +14,7 @@ export function Topbar({ page, showInstall = true }: TopbarProps) {
     <header className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-zinc-200 bg-white px-4 py-3.5 sm:px-8">
       <div className="flex min-w-0 items-center gap-2 text-sm">
         <MobileSidebar />
-        <span className="truncate text-zinc-500 max-sm:hidden">{site.workspace}</span>
+        <WorkspaceLabel />
         <span className="text-zinc-400 max-sm:hidden">/</span>
         <span className="truncate font-medium">{page}</span>
       </div>
