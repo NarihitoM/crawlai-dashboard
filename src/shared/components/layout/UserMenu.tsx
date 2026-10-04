@@ -44,7 +44,7 @@ export function UserMenu() {
   async function signOut() {
     setSigningOut(true);
     await fetch("/api/v1/auth/sign-out", { method: "POST" });
-    window.location.assign(site.landingUrl);
+    window.location.assign(site.signedOutUrl);
   }
 
   return (
