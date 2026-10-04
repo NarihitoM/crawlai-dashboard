@@ -4,6 +4,7 @@ export const site = {
   name: "CrawlAi",
   landingUrl,
   signInUrl: `${landingUrl}/sign-in`,
+  signedInUrl: `${landingUrl}/auth/signed-in`,
   signedOutUrl: `${landingUrl}/auth/signed-out`,
   docsUrl: `${landingUrl}/docs`,
   statusUrl: `${landingUrl}/status`,
